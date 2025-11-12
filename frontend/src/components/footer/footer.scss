@@ -1,0 +1,231 @@
+.footer-section {
+  width: 100%;
+  padding: 30px 0 5px 0;
+  border-top: 1px solid #eee;
+  background-color: #fbfbfb;
+
+  .footer-container {
+    position: relative;
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .main-footer {
+      display: flex;
+      flex-direction: column;
+
+      .zerodha-media-links {
+        width: 100%;
+        margin-bottom: 40px;
+
+        .footer-logo {
+          width: 100%;
+          padding: 10px 0;
+
+          img {
+            width: 152px;
+            height: 20px;
+          }
+        }
+
+        p {
+          font-size: 12.8px;
+          color: #666666;
+          line-height: 24px;
+        }
+
+        .social {
+          width: 100%;
+          margin-top: 15px;
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+
+          li {
+            list-style: none;
+            width: 28px;
+            height: 28px;
+            margin: 0 13px 10px 0;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            img {
+              width: 18px;
+              height: 18px;
+            }
+
+            i {
+              width: 20px;
+              height: 20px;
+              font-size: 20px;
+              margin: 0 4px;
+              opacity: 0.6;
+
+              &:hover {
+                color: #387ed1;
+                opacity: 1;
+              }
+            }
+
+            &:first-child {
+              width: 18px;
+              height: 28px;
+            }
+
+            &:nth-child(2) {
+              width: 18px;
+              height: 28px;
+
+              img {
+                width: 18px;
+                height: 18px;
+                margin-top: 4px;
+              }
+            }
+          }
+
+          &:nth-of-type(2) {
+            margin-top: 8px;
+            border-top: 1px solid #eee;
+
+            li {
+              list-style: none;
+              width: 28px;
+              height: 28px;
+              margin: 0 13px 10px 0;
+
+              img {
+                width: 26px;
+                height: 26px;
+              }
+
+              i {
+                margin-top: 4px;
+              }
+
+              &:nth-child(2) {
+                width: 18px;
+                height: 28px;
+
+                img {
+                  width: 18px;
+                  height: 18px;
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .footer-link-groups {
+        width: 100%;
+
+        .footer-links {
+          width: 100%;
+
+          p {
+            font-size: 18px;
+            font-weight: 500;
+            color: #424242;
+            line-height: 40px;
+            margin-bottom: 10px;
+          }
+
+          ul {
+            width: 100%;
+
+            li {
+              list-style: none;
+              font-size: 14px;
+              color: #666666;
+              line-height: 30px;
+              margin-bottom: 10px;
+
+              &:hover {
+                cursor: pointer;
+                color: #387ed1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-middle-description {
+      width: 100%;
+      margin-top: 40px;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 10.4px;
+        color: #9b9b9b;
+        line-height: 1.8;
+        margin-bottom: 10px;
+
+        span {
+          color: #387ed1;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .footer-bottom-bar {
+      width: 100%;
+
+      ul {
+        li {
+          display: inline;
+          list-style: none;
+          font-size: 12px;
+          color: #9b9b9b;
+          font-weight: 500;
+          line-height: 4;
+          margin-right: 20px;
+
+          &:hover {
+            cursor: pointer;
+            color: #387ed1;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 820px) {
+    .footer-container {
+      .main-footer {
+        flex-direction: row;
+        gap: 4%;
+
+        .zerodha-media-links {
+          width: 24%;
+        }
+
+        .footer-link-groups {
+          width: 72%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .footer-links {
+            width: 22%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 800px) {
+    .footer-container {
+      .footer-bottom-bar {
+        ul {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

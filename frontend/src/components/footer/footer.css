@@ -1,0 +1,185 @@
+.footer-section {
+  width: 100%;
+  padding: 30px 0 5px 0;
+  border-top: 1px solid #eee;
+  background-color: #fbfbfb;
+}
+.footer-section .footer-container {
+  position: relative;
+  width: 1100px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer-section .footer-container .main-footer {
+  display: flex;
+  flex-direction: column;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .footer-logo {
+  width: 100%;
+  padding: 10px 0;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .footer-logo img {
+  width: 152px;
+  height: 20px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links p {
+  font-size: 12.8px;
+  color: #666666;
+  line-height: 24px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li {
+  list-style: none;
+  width: 28px;
+  height: 28px;
+  margin: 0 13px 10px 0;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li:hover {
+  cursor: pointer;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li img {
+  width: 18px;
+  height: 18px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li i {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  margin: 0 4px;
+  opacity: 0.6;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li i:hover {
+  color: #387ed1;
+  opacity: 1;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li:first-child {
+  width: 18px;
+  height: 28px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li:nth-child(2) {
+  width: 18px;
+  height: 28px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social li:nth-child(2) img {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social:nth-of-type(2) {
+  margin-top: 8px;
+  border-top: 1px solid #eee;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social:nth-of-type(2) li {
+  list-style: none;
+  width: 28px;
+  height: 28px;
+  margin: 0 13px 10px 0;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social:nth-of-type(2) li img {
+  width: 26px;
+  height: 26px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social:nth-of-type(2) li i {
+  margin-top: 4px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social:nth-of-type(2) li:nth-child(2) {
+  width: 18px;
+  height: 28px;
+}
+.footer-section .footer-container .main-footer .zerodha-media-links .social:nth-of-type(2) li:nth-child(2) img {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+}
+.footer-section .footer-container .main-footer .footer-link-groups {
+  width: 100%;
+}
+.footer-section .footer-container .main-footer .footer-link-groups .footer-links {
+  width: 100%;
+}
+.footer-section .footer-container .main-footer .footer-link-groups .footer-links p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #424242;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+.footer-section .footer-container .main-footer .footer-link-groups .footer-links ul {
+  width: 100%;
+}
+.footer-section .footer-container .main-footer .footer-link-groups .footer-links ul li {
+  list-style: none;
+  font-size: 14px;
+  color: #666666;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.footer-section .footer-container .main-footer .footer-link-groups .footer-links ul li:hover {
+  cursor: pointer;
+  color: #387ed1;
+}
+.footer-section .footer-container .footer-middle-description {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.footer-section .footer-container .footer-middle-description p {
+  font-size: 10.4px;
+  color: #9b9b9b;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.footer-section .footer-container .footer-middle-description p span {
+  color: #387ed1;
+  font-weight: 500;
+}
+.footer-section .footer-container .footer-bottom-bar {
+  width: 100%;
+}
+.footer-section .footer-container .footer-bottom-bar ul li {
+  display: inline;
+  list-style: none;
+  font-size: 12px;
+  color: #9b9b9b;
+  font-weight: 500;
+  line-height: 4;
+  margin-right: 20px;
+}
+.footer-section .footer-container .footer-bottom-bar ul li:hover {
+  cursor: pointer;
+  color: #387ed1;
+}
+@media (min-width: 820px) {
+  .footer-section .footer-container .main-footer {
+    flex-direction: row;
+    gap: 4%;
+  }
+  .footer-section .footer-container .main-footer .zerodha-media-links {
+    width: 24%;
+  }
+  .footer-section .footer-container .main-footer .footer-link-groups {
+    width: 72%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-section .footer-container .main-footer .footer-link-groups .footer-links {
+    width: 22%;
+  }
+}
+@media (min-width: 800px) {
+  .footer-section .footer-container .footer-bottom-bar ul {
+    text-align: center;
+  }
+}/*# sourceMappingURL=footer.css.map */
