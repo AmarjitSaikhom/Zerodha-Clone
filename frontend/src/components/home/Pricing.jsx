@@ -1,3 +1,4 @@
+import './home.scss';
 import Pricing0 from "../../assets/Images/pricing0.svg";
 import Pricing20 from "../../assets/Images/pricing20.svg";
 

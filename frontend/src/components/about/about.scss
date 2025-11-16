@@ -1,0 +1,309 @@
+.about-hero-section {
+  width: 100%;
+
+  .about-hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 820px) {
+  .about-hero-section {
+    .about-hero-container {
+      padding: 100px 20px;
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .about-hero-section {
+    .about-hero-container {
+      padding: 100px 0;
+    }
+  }
+}
+
+// About History Section
+.about-history-section {
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding: 30px 20px;
+
+  .about-history-contianer {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    .about-history {
+      width: 100%;
+
+      p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin: 16px 0 15px;
+
+        span {
+          color: #387ed1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 820px) {
+  .about-history-section {
+    padding: 80px 20px 0;
+
+    .about-history-contianer {
+      display: flex;
+      justify-content: space-between;
+      gap: 4%;
+
+      .about-history {
+        width: 50%;
+
+        p {
+          font-size: 16px;
+          color: #424242;
+          line-height: 1.8;
+          margin: 16px 0 15px;
+
+          span {
+            color: #387ed1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .about-history-section {
+    padding: 80px 0 0 0;
+  }
+}
+
+// About Team Section
+.about-team-section {
+  width: 100%;
+  padding: 30px 20px;
+
+  .about-team-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .about-people {
+      width: 900px;
+      max-width: 100%;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .about-ceo {
+        width: 100%;
+        padding: 20px 0;
+        margin-bottom: 20px;
+
+        .about-ceo-img {
+          width: 100%;
+          text-align: center;
+
+          img {
+            width: 60%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+          }
+
+          h5 {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.7;
+          }
+
+          p {
+            font-size: 14.4px;
+            color: #666666;
+            line-height: 1.6;
+            margin: 14px 0 15px;
+          }
+        }
+
+        .about-ceo-info {
+          width: 100%;
+
+          p {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 400;
+            margin: 16px 0 15px;
+
+            span {
+              color: #387ed1;
+            }
+          }
+        }
+      }
+    }
+
+    .about-team {
+      position: relative;
+      width: 1100px;
+      max-width: 100%;
+      margin: 0 auto;
+
+      .about-team-info {
+        width: 100%;
+        margin-bottom: 20px;
+
+        .team-member-info {
+          width: 100%;
+          padding: 20px 0px;
+          text-align: center;
+
+          img {
+            width: 60%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+          }
+
+          h5 {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.7;
+          }
+
+          p {
+            font-size: 14.4px;
+            color: #666666;
+            line-height: 1.8;
+          }
+
+          .bio {
+            margin-top: 5px;
+
+            p {
+              width: fit-content;
+              margin: 0 auto;
+              text-align: center;
+              cursor: pointer;
+
+              i {
+                margin-left: 10px;
+              }
+            }
+
+            .bio-info {
+              display: none;
+              margin: 15px 0;
+              padding: 16px 0 15px;
+              font-size: 16px;
+              text-align: left;
+              color: #424242;
+              line-height: 1.8;
+              font-weight: 400;
+            }
+
+            .bio-info-open {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 820px) {
+  .about-team-section {
+    padding: 80px 20px;
+
+    .about-team-container {
+      .about-people {
+        h2 {
+          font-size: 24px;
+        }
+
+        .about-ceo {
+          display: flex;
+          justify-content: space-between;
+          gap: 4%;
+          padding: 40px 0 100px;
+          margin-bottom: 0;
+
+          .about-ceo-img {
+            width: 40%;
+            text-align: center;
+
+            img {
+              width: 295px;
+              height: 295px;
+            }
+
+            h5 {
+              font-size: 18px;
+            }
+          }
+
+          .about-ceo-info {
+            width: 56%;
+          }
+        }
+      }
+
+      .about-team {
+        .about-team-info {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: space-between;
+          column-gap: 30px;
+          margin-bottom: 0px;
+
+          .team-member-info {
+            flex: 0 1 calc(33.33% - 30px);
+            padding: 20px 50px;
+            text-align: center;
+            margin-bottom: 30px;
+
+            img {
+              width: 100%;
+            }
+
+            h5 {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .about-team-section {
+    padding: 80px 0;
+  }
+}

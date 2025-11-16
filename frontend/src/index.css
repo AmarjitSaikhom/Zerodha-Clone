@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  color: #424242;
 }
 
 html,
@@ -34,19 +35,16 @@ a {
 }
 .not-found-section .not-found-container h4 {
   font-size: 16px;
-  color: #424242;
   font-weight: 500;
   margin-bottom: 20px;
 }
 .not-found-section .not-found-container h1 {
   font-size: 24px;
-  color: #424242;
   font-weight: 500;
   line-height: 1.25;
 }
 .not-found-section .not-found-container h5 {
   font-size: 16px;
-  color: #424242;
   font-weight: 400;
   line-height: 1.7;
   margin: 10px 0 20px;

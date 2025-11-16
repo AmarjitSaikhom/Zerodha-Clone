@@ -1,3 +1,4 @@
+import './home.scss';
 import EducationImg from "../../assets/Images/education.svg";
 import { Link } from "react-router-dom";
 
