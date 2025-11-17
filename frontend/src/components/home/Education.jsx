@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const Education = () => {
   return (
-    <section className='home-education-section'>
-      <div className="home-education-container">
-        <div className="home-education-container-left">
-          <img src={EducationImg} alt="Education Image" />
+    <section className='home-education'>
+      <div className="home-education_container">
+        <div className="home-education_left">
+          <img src={EducationImg} loading='lazy' alt="Education Image" />
         </div>
-        <div className="home-education-container-right">
+        <div className="home-education_right">
           <h2>Free and open market education</h2>
           <p>Varsity, the largest online stock market education book in the world covering everything from the basics to advanced trading.</p>
           <Link to={"/#"}>

@@ -1,13 +1,14 @@
-.home-hero-section {
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/breakpoints" as *;
+
+.home-hero {
   width: 100%;
   margin-top: 4vh;
   padding: 30px 20px;
 
-  .home-hero-container {
-    position: relative;
-    width: 1100px;
-    max-width: 100%;
-    margin: 0 auto;
+  &_container {
+    @include container;
     text-align: center;
 
     img {
@@ -17,21 +18,19 @@
     }
 
     h1 {
-      font-size: 24px;
-      color: #424242;
+      font-size: $h1-sm;
       font-weight: 500;
       line-height: 1.25;
     }
 
     p {
-      font-size: 20px;
-      color: #424242;
+      font-size: 1.25rem;
       font-weight: 400;
       line-height: 1.8;
       margin: 10px 0 15px;
     }
 
-    .btn {
+    .home-hero_btn {
       margin-top: 25px;
     }
   }
@@ -39,70 +38,65 @@
   @media (min-width: 768px) {
     margin-top: 10vh;
 
-    .home-hero-container {
-      img {
-        margin-bottom: 60px;
-      }
+    &_container img {
+      margin-bottom: 60px;
     }
   }
 
   @media (min-width: 820px) {
-    padding: 0 20px 120px 20px;
+    padding: 0 20px 120px;
 
-    .home-hero-container {
-      h1 {
-        font-size: 28px;
-      }
+    &_container h1 {
+      font-size: $h1-lg;
     }
   }
 }
 
-.home-ecosystem-section {
+.ecosystem {
   width: 100%;
   margin-top: 30px;
   padding: 30px 20px;
 
-  .home-ecosystem-container {
-    position: relative;
-    width: 1100px;
-    max-width: 100%;
-    margin: 0 auto;
+  &_container {
+    @include container;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 20px;
 
-    .home-ecosystem-container-left {
+    .ecosystem_left {
       flex: 1 1 auto;
 
       h2 {
-        font-size: 20px;
-        color: #424242;
+        font-size: $h2-sm;
         margin-bottom: 40px;
         font-weight: 500;
         line-height: 1.5;
       }
 
-      .home-ecosysystem-why-us {
+      .ecosystem__why {
         h3 {
-          font-size: 20px;
-          color: #424242;
+          font-size: $h3-sm;
           line-height: 1.6;
           font-weight: 500;
         }
 
         p {
-          font-size: 16px;
-          color: #666666;
+          font-size: $p-sm;
+          color: $text-light;
           line-height: 1.8;
           font-weight: 400;
           margin: 5px 0 32px;
+
+          span {
+            color: $primary-blue;
+          }
         }
       }
     }
 
-    .home-ecosystem-container-right {
+    .ecosystem__right {
       flex: 1 1 auto;
 
       img {
@@ -111,7 +105,7 @@
         margin-top: 20px;
       }
 
-      .home-ecosystem-container-right-text {
+      .ecosystem__links {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -119,17 +113,21 @@
         margin: 15px 0;
 
         p {
-          font-size: 16px;
-          color: #387ed1;
+          font-size: $p-sm;
+          color: $primary-blue;
           font-weight: 500;
           line-height: 1.8;
           text-align: center;
+        }
+
+        .ecosystem__link--indent {
+          margin-left: 24px;
         }
       }
     }
   }
 
-  .home-ecosystem-press-logo {
+  .ecosystem__press {
     width: 100%;
     margin-top: 60px;
     display: flex;
@@ -143,7 +141,7 @@
   }
 
   @media (min-width: 768px) {
-    .home-ecosystem-press-logo {
+    .ecosystem__press {
       img {
         width: 710px;
         height: 40px;
@@ -154,10 +152,10 @@
   @media (min-width: 820px) {
     padding: 0 20px 120px;
 
-    .home-ecosystem-container {
+    &_container {
       gap: 30px;
 
-      .home-ecosystem-container-left {
+      .ecosystem_left {
         flex: 1 1 39%;
 
         h2 {
@@ -165,35 +163,30 @@
         }
       }
 
-      .home-ecosystem-container-right {
+      .ecosystem__right {
         flex: 1 1 56%;
       }
     }
   }
 }
 
-.home-pricing-section {
+.home-pricing {
   width: 100%;
   padding: 30px 20px;
 
-  .home-pricing-container {
-    position: relative;
-    width: 1100px;
-    max-width: 100%;
-    margin: 0 auto;
+  &_container {
+    @include container;
 
-    .home-pricing-containe-detail {
+    .home-pricing_detail {
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 0 10px;
 
-      .home-pricing-container-detail-left {
+      .home-pricing_left {
         flex: 1 1 auto;
 
         h2 {
-          font-size: 20px;
+          font-size: $h2-sm;
           color: #424242;
           font-weight: 500;
           line-height: 1.5;
@@ -201,7 +194,7 @@
         }
 
         p {
-          font-size: 16px;
+          font-size: $p-sm;
           color: #424242;
           line-height: 1.8;
           font-weight: 400;
@@ -209,15 +202,16 @@
         }
       }
 
-      .home-pricing-container-detail-right {
+      .home-pricing_right {
         flex: 1 1 auto;
         display: flex;
+        align-items: flex-start;
         flex-wrap: wrap;
 
-        .pricing-box {
+        .pricing_box {
           display: flex;
           align-items: center;
-          padding-top: 30px;
+          padding-top: 10px;
 
           img {
             width: 85px;
@@ -234,8 +228,8 @@
       }
     }
 
-    .home-pricing-containe-see-pricing {
-      font-size: 16px;
+    .home-pricing-cta {
+      font-size: $p-sm;
       color: #387ed1;
       font-weight: 500;
       line-height: 1.8;
@@ -252,20 +246,20 @@
   @media (min-width: 820px) {
     padding: 0 20px 120px 20px;
 
-    .home-pricing-container {
-      .home-pricing-containe-detail {
+    .home-pricing_container {
+      .home-pricing_detail {
         flex-direction: row;
         gap: 20px;
 
-        .home-pricing-container-detail-left {
+        .home-pricing_left {
           flex: 1 1 35%;
 
           h2 {
-            font-size: 24px;
+            font-size: $h2-lg;
           }
         }
 
-        .home-pricing-container-detail-right {
+        .home-pricing_right {
           flex: 1 1 50%;
         }
       }
@@ -273,12 +267,12 @@
   }
 
   @media (min-width: 1024px) {
-    .home-pricing-container {
-      .home-pricing-containe-detail {
+    .home-pricing_container {
+      .home-pricing_detail {
         gap: 20px;
 
-        .home-pricing-container-detail-right {
-          .pricing-box {
+        .home-pricing_right {
+          .pricing_box {
             img {
               width: 100px;
               height: 73px;
@@ -290,19 +284,19 @@
   }
 
   @media (min-width: 1124px) {
-    .home-pricing-container {
-      .home-pricing-containe-detail {
+    .home-pricing_container {
+      .home-pricing_detail {
         flex-direction: row;
         gap: 20px;
 
-        .home-pricing-container-detail-left {
+        .home-pricing_left {
           flex: 1 1 35%;
         }
 
-        .home-pricing-container-detail-right {
+        .home-pricing_right {
           flex: 1 1 50%;
 
-          .pricing-box {
+          .pricing_box {
             img {
               width: 120px;
               height: 88px;
@@ -314,11 +308,11 @@
   }
 }
 
-.home-education-section {
+.home-education {
   width: 100%;
   padding: 30px 20px;
 
-  .home-education-container {
+  .home-education_container {
     position: relative;
     width: 1100px;
     max-width: 100%;
@@ -327,7 +321,7 @@
     align-items: center;
     flex-direction: column;
 
-    .home-education-container-left {
+    .home-education_left {
       flex: 1 1 auto;
       display: flex;
       align-items: center;
@@ -340,12 +334,11 @@
       }
     }
 
-    .home-education-container-right {
+    .home-education_right {
       flex: 1 1 auto;
 
       h2 {
         font-size: 20px;
-        color: #424242;
         line-height: 1.5;
         font-weight: 500;
         margin-bottom: 20px;
@@ -353,7 +346,6 @@
 
       p {
         font-size: 16px;
-        color: #424242;
         line-height: 1.8;
         font-weight: 400;
         margin: 16px 0 15px;
@@ -362,7 +354,7 @@
       a {
         text-decoration: none;
         font-size: 16px;
-        color: #387ed1;
+        color: $primary-blue;
         line-height: 1.7;
         font-weight: 500;
         text-align: center;
@@ -380,8 +372,8 @@
   }
 
   @media (min-width: 768px) {
-    .home-education-container {
-      .home-education-container-left {
+    .home-education_container {
+      .home-education_left {
         img {
           width: 477px;
           height: 350px;
@@ -393,11 +385,11 @@
   @media (min-width: 820px) {
     padding: 0 20px 100px;
 
-    .home-education-container {
+    .home-education_container {
       flex-direction: row;
       gap: 12%;
 
-      .home-education-container-left {
+      .home-education_left {
         flex: 1 1 30%;
 
         img {
@@ -407,7 +399,7 @@
         }
       }
 
-      .home-education-container-right {
+      .home-education_right {
         flex: 1 1 36%;
 
         h2 {
