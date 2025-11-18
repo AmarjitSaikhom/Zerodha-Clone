@@ -1,123 +1,117 @@
 import './nav.scss'
-import NavLogo from "../../assets/Images/logo.svg"
-import KiteLogo from "../../assets/Images/kite-logo.svg";
-import ConsoleLogo from "../../assets/Images/console-logo.svg"
-import KiteConnectLogo from "../../assets/Images/kite-connect-logo.svg"
-import CoinLogo from "../../assets/Images/coin-logo.svg"
-import VarsityLogo from "../../assets/Images/varsity-logo.png"
-import TqnaLogo from "../../assets/Images/tqna-logo.png"
+import { NavLogo, KiteLogo, ConsoleLogo, KiteConnectLogo, CoinLogo, VarsityLogo, TqnaLogo } from './navLogos';
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom';
+import { navLinks } from '../../data/navLinks';
+import { products } from '../../data/productName';
 
 const Nav = () => {
   const [navMenuOpen, setNavMenuOpen] = useState(false);
   const sideBarRef = useRef(null);
   const menuButtonRef = useRef(null);
 
-  const handleClickOutside = useCallback((event) => {
-    if (sideBarRef.current.contains(event.target)) {
-      return
-    }
+  // const handleClickOutside = useCallback((event) => {
+  //   if (sideBarRef.current.contains(event.target)) {
+  //     return
+  //   }
 
-    if (menuButtonRef.current.contains(event.target)) {
-      return
-    }
+  //   if (menuButtonRef.current.contains(event.target)) {
+  //     return
+  //   }
 
-    setNavMenuOpen(false);
-  }, [])
+  //   setNavMenuOpen(false);
+  // }, [])
+
+  // useEffect(() => {
+  //   if (navMenuOpen) {
+  //     document.addEventListener('mousedown', handleClickOutside);
+  //   }
+
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   }
+
+  // }, [navMenuOpen]);
+
+  // useEffect(() => {
+  //   if (!navMenuOpen) return;
+
+  //   const handler = (event) => {
+  //     if (
+  //       sideBarRef.current &&
+  //       !sideBarRef.current.contains(event.target) &&
+  //       !menuButtonRef.current.contains(event.target)
+  //     ) {
+  //       setNavMenuOpen(false);
+  //     }
+  //   };
+
+  //   document.addEventListener("mousedown", handler);
+  //   return () => document.removeEventListener("mousedown", handler);
+
+  // }, [navMenuOpen]);
+
 
   useEffect(() => {
-    if (navMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+    if (!navMenuOpen) return;
+
+    const onPointerDown = (event) => {
+      const sidebar = sideBarRef.current;
+      const button = menuButtonRef.current;
+
+      if (!sidebar || !button) return
+
+      if (!sidebar.contains(event.target) && !button.contains(event.target)) {
+        setNavMenuOpen(false);
+      }
     }
+
+    document.addEventListener('pointerdown', onPointerDown);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('pointerdown', onPointerDown);
     }
-
   }, [navMenuOpen]);
 
-
-
   return (
-    <section className='nav-section'>
-      <div className="nav-container">
-        <div className="nav-logo">
+    <section className='nav'>
+      <div className="nav_container">
+        <div className="nav_logo">
           <Link to="/">
             <img src={NavLogo} alt="Zerodha logo" />
           </Link>
         </div>
-        <div className="nav-route-links">
+        <div className="nav_route-links">
           <ul>
-            <li>
-              <Link to="/signup">Signup</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/products">Products</Link>
-            </li>
-            <li>
-              <Link to="/pricing">Pricing</Link>
-            </li>
-            <li>
-              <Link to="/support">Support</Link>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link to={link.path}>{link.name}</Link>
+              </li>
+            ))}
+
           </ul>
-          <div ref={menuButtonRef} onClick={() => setNavMenuOpen(!navMenuOpen)} className={`nav-menu ${navMenuOpen ? 'openMenu' : ''}`} >
+          <div ref={menuButtonRef} onClick={() => setNavMenuOpen(!navMenuOpen)} className={`nav_menu ${navMenuOpen ? 'openMenu' : ''}`} >
             <span></span>
             <span ></span>
             <span></span>
           </div>
         </div>
-        <div ref={sideBarRef} className={`nav-side-bar ${navMenuOpen ? 'openNavSideBar' : ''}`}>
+        <div ref={sideBarRef} className={`nav_sidebar ${navMenuOpen ? 'openNavSideBar' : ''}`}>
           <ul className="open-on-small">
-            <li>
-              <Link to="/signup">Signup</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/products">Products</Link>
-            </li>
-            <li>
-              <Link to="/pricing">Pricing</Link>
-            </li>
-            <li>
-              <Link to="/support">Support</Link>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link to={link.path}>{link.name}</Link>
+              </li>
+            ))}
           </ul>
-          <div className="product-list">
-            <div className="product-name">
-              <img src={KiteLogo} alt="" />
-              <span>Kite</span>
-              <p>Trading Platform</p>
-            </div>
-            <div className="product-name">
-              <img src={ConsoleLogo} alt="" />
-              <span>Console</span>
-              <p>Backoffice</p>
-            </div>
-            <div className="product-name">
-              <img src={KiteConnectLogo} alt="" />
-              <span>Kite Connect</span>
-              <p>Trading APIs</p>
-            </div>
-            <div className="product-name">
-              <img src={CoinLogo} alt="" />
-              <span>Coin</span>
-              <p>Mutual funds</p>
-            </div>
-            <div className="product-name">
-              <img src={VarsityLogo} alt="" />
-              <span>Varsity</span>
-            </div>
-            <div className="product-name">
-              <img src={TqnaLogo} alt="" />
-              <span>Trading Q&A</span>
-            </div>
+          <div className="nav_product-list">
+            {products.map((product) => (
+              <div key={product.name} className="nav_product-item">
+                <img src={product.img} loading='lazy' alt={product.name + "Logo"} />
+                <span>{product.name}</span>
+                <p>{product.desc}</p>
+              </div>
+            ))}
           </div>
 
           <div className="footer-menu">
@@ -144,12 +138,12 @@ const Nav = () => {
             <div className="educaton">
               <p>Education</p>
 
-              <div className="product-list">
-                <div className="product-name">
+              <div className="nav_product-list">
+                <div className="nav_product-item">
                   <img src={VarsityLogo} alt="" />
                   <span>Varsity</span>
                 </div>
-                <div className="product-name">
+                <div className="nav_product-item">
                   <img src={TqnaLogo} alt="" />
                   <span>Trading Q&A</span>
                 </div>
